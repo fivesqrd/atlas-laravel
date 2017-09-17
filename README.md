@@ -1,9 +1,14 @@
 # Atlas-Laravel
 
+A Laravel service provider for the Atlas library
+
+## Install
+
+
 ```composer require fivesqrd/atlas-laravel```
 
 
-Composer will automaticall register the provider and faced. If not:
+Composer will automaticall register the provider and facade. If not:
 
 In config/app.php register the Atlas Service Provider in the "providers" array:
 
