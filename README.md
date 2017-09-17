@@ -44,3 +44,5 @@ Atlas facade is now available can be instantiated throughout the application lik
   ->query()
   ->fetch()->all();
 ```
+
+More usage examples for the Atlas API are avilable on the Atlas repo: http://github.com/Five-Squared/Atlas
