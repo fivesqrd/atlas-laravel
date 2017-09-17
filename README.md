@@ -3,12 +3,14 @@
 ```composer require fivesqrd/atlas-laravel```
 
 
+Composer will automaticall register the provider and faced. If not:
+
 In config/app.php register the Atlas Service Provider in the "providers" array:
 
 ```
     'providers' => array(
         // ...
-        Atlas\Laravel\AtlasServiceProvider::class,
+        Atlas\Laravel\ServiceProvider::class,
     )
 ```
     
@@ -23,27 +25,16 @@ In config/app.php add the Atlas facade under "aliases":
 
 ## Config
 
-Add the below to ```app/config/atlas.php```
+The config should be automatically created from the composer install. If not, run ```php artisan vendor:publish```
 
-```
-return [
-    'read' => [
-        'dsn'      => 'mysql:dbname=' . env('DB_DATABASE') . ';host=' . env('DB_HOST'),
-        'username' => env('DB_USERNAME'),
-        'password' => env('DB_PASSWORD'),
-    ],
-    'write' => [
-        'dsn'      => 'mysql:dbname=' . env('DB_DATABASE') . ';host=' . env('DB_HOST'),
-        'username' => env('DB_USERNAME'),
-        'password' => env('DB_PASSWORD'),
-    ],
-]
-```
+Atlas uses 'DB_DATABASE', 'DB_USERNAME' and 'DB_PASSWORD' values defined in the .env config file.
 
 ## Usage
 
+Atlas facade is now available can be instantiated throughout the application like this:
+
 ```
-Atlas::model(Model\User::class)
+\Atlas::model(Model\User::class)
   ->isActive(true)
   ->query()
   ->fetch()->all();
