@@ -39,7 +39,7 @@ Atlas uses 'DB_DATABASE', 'DB_USERNAME' and 'DB_PASSWORD' values defined in the 
 Atlas facade is now available can be instantiated throughout the application like this:
 
 ```
-\Atlas::model(Model\User::class)
+\Atlas::model(App\Model\User::class)
   ->isActive(true)
   ->query()
   ->fetch()->all();
