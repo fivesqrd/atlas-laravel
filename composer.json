@@ -28,10 +28,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Atlas\\Laravel\\AtlasServiceProvider"
+                "Atlas\\Laravel\\ServiceProvider"
             ],
             "aliases": {
-                "Atlas": "Atlas\\Laravel\\AtlasFacade"
+                "Atlas": "Atlas\\Laravel\\Facade"
             }
         }
     }

@@ -1,14 +1,12 @@
 <?php 
 namespace Atlas\Laravel;
 
-use Illuminate\Support\Facades\Facade;
-
 /**
  * Atlas Facade
  *
  * @method static Atlas model($class) Get a model helper class.
  */
-class AtlasFacade extends Facade
+class Facade extends Illuminate\Support\Facades\Facade
 {
     /**
      * Get the registered name of the component.

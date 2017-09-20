@@ -4,12 +4,11 @@ namespace Atlas\Laravel;
 
 use Atlas;
 use Illuminate\Foundation\Application as LaravelApplication;
-use Illuminate\Support\ServiceProvider;
 
 /**
  * Atlas service provider
  */
-class AtlasServiceProvider extends ServiceProvider
+class ServiceProvider extends Illuminate\Support\ServiceProvider
 {
     const VERSION = '3.2.0';
 
