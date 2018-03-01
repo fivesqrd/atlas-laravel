@@ -45,4 +45,17 @@ Atlas facade is now available can be instantiated throughout the application lik
   ->fetch()->all();
 ```
 
+```
+$user = \Atlas::model(App\Model\User::class)->fetch(1);
+```
+
+```
+\Atlas::save($user);
+```
+
+
+```
+\Atlas::relation($user)->tickets()->fetch()->all();
+```
+
 More usage examples for the Atlas API are avilable on the Atlas repo: http://github.com/Five-Squared/Atlas
