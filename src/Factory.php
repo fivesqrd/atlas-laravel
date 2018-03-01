@@ -24,4 +24,30 @@ class Factory
             new Atlas\Database\Resolver($class)
         );
     }
+
+    public function relation($entity)
+    {
+        $namespace = $this->_namespace($entity);
+        return $this->model($namespace)->relation($entity);
+    }
+
+    public function save($entity)
+    {
+        $namespace = $this->_namespace($entity);
+        return $this->model($namespace)->save($entity);
+    }
+
+    public function delete($entity)
+    {
+        $namespace = $this->_namespace($entity);
+        return $this->model($namespace)->delete($entity);
+    }
+
+    protected function _namespace($entity)
+    {
+        $class   = get_class($entity);
+        $reflect = new \ReflectionClass($class);
+
+        return $reflect->getNamespaceName();
+    }
 }
