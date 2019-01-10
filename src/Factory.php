@@ -25,6 +25,17 @@ class Factory
         );
     }
 
+    public function sql()
+    {
+        if (empty($this->_config)) {
+            throw new \Exception('Atlas config is empty');
+        }
+
+        $facory = new Atlas\Database\Factory($this->_config);
+
+        return $facory->sql();
+    }
+
     public function relation($entity)
     {
         $namespace = $this->_namespace($entity);
