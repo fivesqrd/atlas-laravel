@@ -30,7 +30,7 @@ class ServiceProvider extends Support\ServiceProvider
         /* Path to default config file */
         $this->publishes([
             dirname(__DIR__) . '/config/atlas.php' => config_path('atlas.php')
-        ]);
+        ], 'atlas-config');
 
     }
 
